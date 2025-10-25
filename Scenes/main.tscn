@@ -1,10 +1,30 @@
-[gd_scene load_steps=6 format=3 uid="uid://d2uh6fgiqidv"]
+[gd_scene load_steps=8 format=3 uid="uid://d2uh6fgiqidv"]
 
 [ext_resource type="Texture2D" uid="uid://d3cvl23bghamc" path="res://Assets/Free-Summer-Pixel-Art-Backgrounds/PNG/summer 2/Summer2.png" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://dsndwer0n5t5c" path="res://Scenes/main.gd" id="1_kry3j"]
 [ext_resource type="PackedScene" uid="uid://usdlpmjw2r5n" path="res://Scenes/board.tscn" id="2_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://b7d4ek7asx35m" path="res://Scenes/cross.tscn" id="3_kry3j"]
 [ext_resource type="PackedScene" uid="uid://dadb0ly3yiwft" path="res://Scenes/nought.tscn" id="4_21xkr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kry3j"]
+bg_color = Color(0.92458165, 0.7416532, 0.7747671, 1)
+border_width_left = 5
+border_color = Color(0.814858, 0.48469502, 0.56054956, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_21xkr"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.8156863, 0.4862745, 0.56078434, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.793096, 0.5102442, 0.59225017, 0.6)
+shadow_size = 5
+shadow_offset = Vector2(5, 5)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_kry3j")
@@ -27,9 +47,26 @@ anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 854.0
+offset_left = 859.0
 offset_top = -5.0
 offset_right = 1159.0
-offset_bottom = 658.0
+offset_bottom = 660.0
 grow_horizontal = 0
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kry3j")
+
+[node name="PlayerLabel" type="Label" parent="."]
+texture_filter = 1
+offset_left = 918.0
+offset_top = 114.0
+offset_right = 1152.0
+offset_bottom = 169.0
+theme_override_font_sizes/font_size = 30
+text = "Next player:"
+
+[node name="MarkerPanel" type="Panel" parent="."]
+offset_left = 904.0
+offset_top = 199.0
+offset_right = 1104.0
+offset_bottom = 399.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_21xkr")

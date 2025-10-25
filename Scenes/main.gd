@@ -5,14 +5,37 @@ extends Node2D
 var board_size: int
 var cell_size: int 
 var grid_pos: Vector2i
-var grid_data: Array = [[0,0,0],[0,0,0],[0,0,0]]
-var player: int = 1
+var grid_data: Array 
+var player: int
+var temp_marker
+var marker_panel_pos: Vector2i
+
+# win requirements
+var row_sum: int
+var column_sum: int
+var diagonal1_sum: int
+var diagonal2_sum: int
+var winner: int
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	board_size = 700-190
 	cell_size = board_size/3
+	marker_panel_pos = $MarkerPanel.get_position()
+	new_game()
+	print(marker_panel_pos + Vector2i(cell_size/2+190, cell_size/2+75))
 
+func new_game():
+	player = 1
+	winner = 0
+	grid_data = [
+		[0,0,0],
+		[0,0,0],
+		[0,0,0]
+		]
+	create_marker(player, marker_panel_pos + Vector2i(cell_size/2+15, cell_size/2+15), true)
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -27,24 +50,67 @@ func _input(event):
 				event.position.x -= 190
 				event.position.y -= 75 
 				grid_pos = Vector2i(event.position / cell_size)
-				print(event.position)
-				print(grid_pos.x,grid_pos.y)
 				if grid_data[grid_pos.y][grid_pos.x] == 0:
 					grid_data[grid_pos.y][grid_pos.x] = player
 					# place said player's marker
-					create_marker(player, grid_pos*cell_size + Vector2i(cell_size/2+190,cell_size/2+75))
+					create_marker(player, grid_pos*cell_size + Vector2i(cell_size/2+190, cell_size/2+75))
+					if check_win() != 0:
+						print("Finish!")
 					player *= -1
+					# clear temp
+					temp_marker.queue_free()
+					# replace with next player
+					create_marker(player, marker_panel_pos + Vector2i(cell_size/2+15, cell_size/2+15), true)
 					print(grid_data)
 		
+#create a function new_game()??
 
-func create_marker(player, position):
+func create_marker(player, position, temp=false):
 	if player == 1:
 		var nought = nought_scene.instantiate()
 		nought.position = position
 		add_child(nought)
+		if temp:
+			temp_marker = nought
 	else:
 		var cross = cross_scene.instantiate()
 		cross.position = position
 		add_child(cross)
+		if temp:
+			temp_marker = cross
 	
 	
+#func check_win():
+	#for i in len(grid_data):
+		#for n in range(2):
+			#row_sum += grid_data[i][n]
+			#column_sum += grid_data[n][i]
+			#diagonal1_sum += grid_data[i][i]
+		#diagonal2_sum = grid_data[i][2] + grid_data[i][1] + grid_data [i][0]
+		#print(row_sum)
+		#print(column_sum)
+		#print(diagonal1_sum)
+		#print(diagonal2_sum)
+		#if row_sum == 3 or column_sum == 3 or diagonal1_sum == 3 or diagonal2_sum == 3:
+			#winner = 1
+		#elif row_sum == -3 or column_sum == -3 or diagonal1_sum == -3 or diagonal2_sum == -3:
+			#winner = -1
+		#return winner
+	#print(row_sum)
+	#print(column_sum)
+		
+func check_win():
+	for i in len(grid_data):
+		row_sum = grid_data[i][0] + grid_data[i][1] + grid_data[i][1]
+		column_sum = grid_data[0][i] + grid_data[1][i] + grid_data[2][i]
+		diagonal1_sum = grid_data[0][0] + grid_data[1][1] + grid_data[2][2]
+		diagonal2_sum = grid_data[0][2] + grid_data[1][1] + grid_data[2][0]
+		print(row_sum)
+		print(column_sum)
+		print(diagonal1_sum)
+		print(diagonal2_sum)
+		if row_sum == 3 or column_sum == 3 or diagonal1_sum == 3 or diagonal2_sum == 3:
+			winner = 1
+		elif row_sum == -3 or column_sum == -3 or diagonal1_sum == -3 or diagonal2_sum == -3:
+			winner = -1
+	return winner
