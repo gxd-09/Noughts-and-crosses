@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d2uh6fgiqidv"]
+[gd_scene load_steps=6 format=3 uid="uid://d2uh6fgiqidv"]
 
 [ext_resource type="Texture2D" uid="uid://d3cvl23bghamc" path="res://Assets/Free-Summer-Pixel-Art-Backgrounds/PNG/summer 2/Summer2.png" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://dsndwer0n5t5c" path="res://Scenes/main.gd" id="1_kry3j"]
@@ -6,13 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://b7d4ek7asx35m" path="res://Scenes/cross.tscn" id="3_kry3j"]
 [ext_resource type="PackedScene" uid="uid://dadb0ly3yiwft" path="res://Scenes/nought.tscn" id="4_21xkr"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kry3j"]
-size = Vector2(125.25, 125.75)
-
 [node name="Main" type="Node2D"]
 script = ExtResource("1_kry3j")
-metadata/_edit_vertical_guides_ = [190.0, 190.0]
-metadata/_edit_horizontal_guides_ = [580.0]
+nought_scene = ExtResource("4_21xkr")
+cross_scene = ExtResource("3_kry3j")
+metadata/_edit_vertical_guides_ = [190.0, 190.0, 700.0]
+metadata/_edit_horizontal_guides_ = [580.0, 76.0, 583.0]
 
 [node name="Summer2" type="Sprite2D" parent="."]
 position = Vector2(578.5, 327.5)
@@ -22,19 +21,15 @@ texture = ExtResource("1_jjgbg")
 [node name="Board" parent="." instance=ExtResource("2_jjvhh")]
 position = Vector2(445, 329)
 
-[node name="Cross" parent="Board" instance=ExtResource("3_kry3j")]
-position = Vector2(-44.5, -44.25)
-scale = Vector2(0.75, 0.75)
-
-[node name="Nought" parent="Board" instance=ExtResource("4_21xkr")]
-position = Vector2(1, -42.75)
-scale = Vector2(0.45, 0.45)
-
-[node name="Area2D" type="Area2D" parent="Board"]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Board/Area2D"]
-position = Vector2(-0.125, 0.125)
-shape = SubResource("RectangleShape2D_kry3j")
-
-[connection signal="mouse_entered" from="Board/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[node name="SidePanel" type="Panel" parent="."]
+custom_minimum_size = Vector2(300, 648)
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 854.0
+offset_top = -5.0
+offset_right = 1159.0
+offset_bottom = 658.0
+grow_horizontal = 0
+grow_vertical = 2

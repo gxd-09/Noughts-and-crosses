@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chlmoqw3j0pi7"
-path="res://.godot/imported/board.png-aeeee8e2906231b92d271d02de0f6106.ctex"
+uid="uid://dvt6evt0320sa"
+path="res://.godot/imported/cross.png-4499963432517842f8cd445c9598d7e4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://board.png"
-dest_files=["res://.godot/imported/board.png-aeeee8e2906231b92d271d02de0f6106.ctex"]
+source_file="res://Assets/cross.png"
+dest_files=["res://.godot/imported/cross.png-4499963432517842f8cd445c9598d7e4.ctex"]
 
 [params]
 
