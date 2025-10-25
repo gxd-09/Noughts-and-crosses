@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://usdlpmjw2r5n"]
+
+[ext_resource type="Texture2D" uid="uid://chlmoqw3j0pi7" path="res://board.png" id="1_tnbny"]
+
+[node name="Board" type="Sprite2D"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("1_tnbny")
