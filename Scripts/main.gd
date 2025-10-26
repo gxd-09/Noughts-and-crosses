@@ -98,30 +98,11 @@ func create_marker(player, position, temp=false):
 		add_child(cross)
 		if temp:
 			temp_marker = cross
-	
-	
-#func check_win():
-	#for i in len(grid_data):
-		#for n in range(2):
-			#row_sum += grid_data[i][n]
-			#column_sum += grid_data[n][i]
-			#diagonal1_sum += grid_data[i][i]
-		#diagonal2_sum = grid_data[i][2] + grid_data[i][1] + grid_data [i][0]
-		#print(row_sum)
-		#print(column_sum)
-		#print(diagonal1_sum)
-		#print(diagonal2_sum)
-		#if row_sum == 3 or column_sum == 3 or diagonal1_sum == 3 or diagonal2_sum == 3:
-			#winner = 1
-		#elif row_sum == -3 or column_sum == -3 or diagonal1_sum == -3 or diagonal2_sum == -3:
-			#winner = -1
-		#return winner
-	#print(row_sum)
-	#print(column_sum)
+			
 		
 func check_win():
 	for i in len(grid_data):
-		row_sum = grid_data[i][0] + grid_data[i][1] + grid_data[i][1]
+		row_sum = grid_data[i][0] + grid_data[i][1] + grid_data[i][2]
 		column_sum = grid_data[0][i] + grid_data[1][i] + grid_data[2][i]
 		diagonal1_sum = grid_data[0][0] + grid_data[1][1] + grid_data[2][2]
 		diagonal2_sum = grid_data[0][2] + grid_data[1][1] + grid_data[2][0]
@@ -134,6 +115,7 @@ func check_win():
 		elif row_sum == -3 or column_sum == -3 or diagonal1_sum == -3 or diagonal2_sum == -3:
 			winner = -1
 	return winner
+
 
 func win_sequence():
 	print("Finish!")

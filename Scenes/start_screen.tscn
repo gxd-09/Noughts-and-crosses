@@ -36,16 +36,17 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_i8r30")
 
 [node name="Name" type="Label" parent="."]
-offset_left = 126.000015
-offset_top = 156.0
-offset_right = 1056.0
-offset_bottom = 269.0
+offset_left = 152.0
+offset_top = 155.00002
+offset_right = 1082.0
+offset_bottom = 268.0
 scale = Vector2(0.8719766, 1.0382147)
+size_flags_horizontal = 4
 theme_override_colors/font_shadow_color = Color(0.9121075, 0.55217546, 0.8034197, 0)
 theme_override_colors/font_outline_color = Color(0.22696331, 0.6685267, 0.48454428, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/outline_size = 10
-theme_override_constants/shadow_outline_size = 5
+theme_override_constants/shadow_outline_size = 0
 theme_override_fonts/font = ExtResource("2_5e717")
 theme_override_font_sizes/font_size = 80
 text = "Welcome to 
@@ -53,10 +54,10 @@ Noughts and Crosses!"
 horizontal_alignment = 1
 
 [node name="start" type="Button" parent="."]
-offset_left = 417.0
-offset_top = 473.0
-offset_right = 667.0
-offset_bottom = 523.0
+offset_left = 427.0
+offset_top = 477.0
+offset_right = 677.0
+offset_bottom = 527.0
 theme_override_colors/font_color = Color(0.9137255, 0.59607846, 0.6431373, 1)
 theme_override_fonts/font = ExtResource("2_5e717")
 theme_override_font_sizes/font_size = 40
@@ -77,11 +78,11 @@ text = "Player 1:
 Player 2:"
 
 [node name="example_player1" type="Sprite2D" parent="."]
-position = Vector2(636, 318)
+position = Vector2(640, 326)
 texture = ExtResource("3_mtlf8")
 
 [node name="example_player2" type="Sprite2D" parent="."]
-position = Vector2(636, 399.00003)
+position = Vector2(635, 410.00003)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("4_nqnrp")
 
