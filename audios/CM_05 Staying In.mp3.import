@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://7xnybh1f8wvo"
+path="res://.godot/imported/CM_05 Staying In.mp3-3fa15557ab37481cb27b8feb37ee3b6b.mp3str"
+
+[deps]
+
+source_file="res://audios/CM_05 Staying In.mp3"
+dest_files=["res://.godot/imported/CM_05 Staying In.mp3-3fa15557ab37481cb27b8feb37ee3b6b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

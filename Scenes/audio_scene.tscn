@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://l3alhoh07trs"]
+
+[ext_resource type="Script" uid="uid://oq2374ddtmiu" path="res://Scenes/audio_scene.gd" id="1_8aacv"]
+[ext_resource type="AudioStream" uid="uid://7xnybh1f8wvo" path="res://audios/CM_05 Staying In.mp3" id="1_67c5v"]
+
+[node name="AudioScene" type="Node2D"]
+script = ExtResource("1_8aacv")
+
+[node name="MainMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_67c5v")

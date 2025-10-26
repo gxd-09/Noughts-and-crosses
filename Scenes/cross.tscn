@@ -2,8 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://dvt6evt0320sa" path="res://Assets/cross.png" id="1_8pfb8"]
 
-[node name="Cross" type="Sprite2D"]
+[node name="Cross" type="Sprite2D" groups=["crosses"]]
 texture_filter = 1
+position = Vector2(0, 1)
 scale = Vector2(3.3, 3.3)
 texture = ExtResource("1_8pfb8")
 offset = Vector2(-2, 0)

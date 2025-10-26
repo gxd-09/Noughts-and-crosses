@@ -1,0 +1,77 @@
+[gd_scene load_steps=5 format=3 uid="uid://cll3ra7kwe4p7"]
+
+[ext_resource type="Script" uid="uid://bfgcpyefasf6n" path="res://Scripts/game_over_menu.gd" id="1_arass"]
+[ext_resource type="FontFile" uid="uid://b8gpwuakvd0pa" path="res://Assets/bytebounce/ByteBounce.ttf" id="2_i22rp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7upku"]
+bg_color = Color(0.9254902, 0.7411765, 0.7764706, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.8156863, 0.4862745, 0.56078434, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0.68307734, 0.6830774, 0.68307734, 0.6)
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_arass"]
+bg_color = Color(0.8156863, 0.4862745, 0.56078434, 1)
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color(0.86602426, 0.5015554, 0.6140756, 0.6)
+shadow_size = 10
+
+[node name="GameOverMenu" type="CanvasLayer"]
+script = ExtResource("1_arass")
+
+[node name="GameOverPanel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -362.0
+offset_top = -145.0
+offset_right = 100.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7upku")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -328.0
+offset_top = -70.0
+offset_right = 76.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_i22rp")
+theme_override_font_sizes/font_size = 60
+text = "Player 1 Wins!"
+horizontal_alignment = 1
+
+[node name="restart" type="Button" parent="."]
+offset_left = 351.0
+offset_top = 345.0
+offset_right = 545.0
+offset_bottom = 421.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_i22rp")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_arass")
+text = "Play Again"
+
+[connection signal="pressed" from="restart" to="." method="_on_restart_pressed"]

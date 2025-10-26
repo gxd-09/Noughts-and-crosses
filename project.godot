@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Noughts-and-Crosses"
-run/main_scene="uid://d2uh6fgiqidv"
+run/main_scene="uid://dnaqqixilaise"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 

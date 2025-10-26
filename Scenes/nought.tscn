@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dxqygeu7q1pdv" path="res://Assets/nought.png" id="1_ekh36"]
 
-[node name="Nought" type="Sprite2D"]
+[node name="Nought" type="Sprite2D" groups=["noughts"]]
 texture_filter = 1
 scale = Vector2(1.9, 1.9)
 texture = ExtResource("1_ekh36")

@@ -1,13 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://d2uh6fgiqidv"]
+[gd_scene load_steps=11 format=3 uid="uid://d2uh6fgiqidv"]
 
 [ext_resource type="Texture2D" uid="uid://d3cvl23bghamc" path="res://Assets/Free-Summer-Pixel-Art-Backgrounds/PNG/summer 2/Summer2.png" id="1_jjgbg"]
-[ext_resource type="Script" uid="uid://dsndwer0n5t5c" path="res://Scenes/main.gd" id="1_kry3j"]
+[ext_resource type="Script" uid="uid://dsndwer0n5t5c" path="res://Scripts/main.gd" id="1_kry3j"]
 [ext_resource type="PackedScene" uid="uid://usdlpmjw2r5n" path="res://Scenes/board.tscn" id="2_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://b7d4ek7asx35m" path="res://Scenes/cross.tscn" id="3_kry3j"]
 [ext_resource type="PackedScene" uid="uid://dadb0ly3yiwft" path="res://Scenes/nought.tscn" id="4_21xkr"]
+[ext_resource type="FontFile" uid="uid://b8gpwuakvd0pa" path="res://Assets/bytebounce/ByteBounce.ttf" id="6_6bp64"]
+[ext_resource type="PackedScene" uid="uid://cll3ra7kwe4p7" path="res://Scenes/game_over_menu.tscn" id="6_21xkr"]
+[ext_resource type="AudioStream" uid="uid://bu4ss7k51uqgm" path="res://audios/winner-game-sound-404167.mp3" id="8_344ge"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kry3j"]
-bg_color = Color(0.92458165, 0.7416532, 0.7747671, 1)
+bg_color = Color(0.9254902, 0.7411765, 0.7764706, 1)
 border_width_left = 5
 border_color = Color(0.814858, 0.48469502, 0.56054956, 1)
 
@@ -57,12 +60,14 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_kry3j")
 
 [node name="PlayerLabel" type="Label" parent="."]
 texture_filter = 1
-offset_left = 918.0
-offset_top = 114.0
-offset_right = 1152.0
-offset_bottom = 169.0
-theme_override_font_sizes/font_size = 30
+offset_left = 902.0
+offset_top = 131.0
+offset_right = 1136.0
+offset_bottom = 186.0
+theme_override_fonts/font = ExtResource("6_6bp64")
+theme_override_font_sizes/font_size = 50
 text = "Next player:"
+vertical_alignment = 1
 
 [node name="MarkerPanel" type="Panel" parent="."]
 offset_left = 904.0
@@ -70,3 +75,11 @@ offset_top = 199.0
 offset_right = 1104.0
 offset_bottom = 399.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_21xkr")
+
+[node name="GameOverMenu" parent="." instance=ExtResource("6_21xkr")]
+process_mode = 2
+
+[node name="WinSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_344ge")
+
+[connection signal="restart" from="GameOverMenu" to="." method="_on_game_over_menu_restart"]
