@@ -1,12 +1,12 @@
-This is my project, named: Noughts and crosses! (Original, I know)
+This is my project, named: Noughts and crosses! (Original, I know)\n
 It's a simple game that requires 2 players: players take turns clicking with LMB in one of the cells in the grid and they battle it out until a winner is declared! Restart the game as many times as you want.
-I decided to make this timeless classic of a game because I haven't coded in a while, and I didn't want to overwhelm myself with an insanely large and ambitious game idea. This is the first time that I've used the godot game engine and, having only done python up until now, learning how to code in gdscript and understand the node system within godot has been a challenge for me.
+I decided to make this timeless classic of a game because I haven't coded in a while, and I didn't want to overwhelm myself with an insanely large and ambitious game idea. This is the first time that I've used the godot game engine and, having only done python up until now, learning how to code in gdscript and understand the node system within godot has been a challenge for me.\n
 Apart from the syntax of the code, I would occasionally struggle with the logic behind my loops and if statements. Whenever I was struggling for a while, I would search up some quick tips on reddit or just ask my friends (also great programmers)!! I learnt how to make and use classes, functions, a myriad of nodes, how to change scenes, deal with user inputs, signalling, accessing properties of different nodes, implementing audios and much more!
-In the end, this game dev experience gave me a great insight and appreciation for what goes into making a game (even as seemingly straight-forward as this one) and every minute detail that developers have to thing about, not only in terms of aesthetic, but game functionality. I encountered many bugs, which sometimes took ages to fix, but I perservered and made it to the end.
+In the end, this game dev experience gave me a great insight and appreciation for what goes into making a game (even as seemingly straight-forward as this one) and every minute detail that developers have to thing about, not only in terms of aesthetic, but game functionality. I encountered many bugs, which sometimes took ages to fix, but I perservered and made it to the end.\n
 As an improvement, I perhaps could implement a score system, showing the wins of each player, or add in a 4x4 or even 5x5 grid, or even other minigames.
 Hope you enjoy :)
 
-
+[![Athena Award Badge](https://img.shields.io/endpoint?url=https%3A%2F%2Faward.athena.hackclub.com%2Fapi%2Fbadge)](https://award.athena.hackclub.com?utm_source=readme)
 
 
 
